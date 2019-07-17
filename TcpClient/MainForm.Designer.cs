@@ -45,8 +45,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label8 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -179,6 +179,7 @@
             // 
             // sendButton
             // 
+            this.sendButton.BackColor = System.Drawing.Color.WhiteSmoke;
             this.sendButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sendButton.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.sendButton.Location = new System.Drawing.Point(360, 3);
@@ -186,7 +187,7 @@
             this.sendButton.Size = new System.Drawing.Size(120, 28);
             this.sendButton.TabIndex = 5;
             this.sendButton.Text = "Send";
-            this.sendButton.UseVisualStyleBackColor = true;
+            this.sendButton.UseVisualStyleBackColor = false;
             this.sendButton.Click += new System.EventHandler(this.SendButton_Click);
             // 
             // sendTextBox
@@ -204,6 +205,7 @@
             // connectButton
             // 
             this.connectButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.connectButton.BackColor = System.Drawing.Color.WhiteSmoke;
             this.connectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.connectButton.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.connectButton.Location = new System.Drawing.Point(360, 3);
@@ -211,7 +213,7 @@
             this.connectButton.Size = new System.Drawing.Size(120, 28);
             this.connectButton.TabIndex = 3;
             this.connectButton.Text = "Connect";
-            this.connectButton.UseVisualStyleBackColor = true;
+            this.connectButton.UseVisualStyleBackColor = false;
             this.connectButton.Click += new System.EventHandler(this.ConnectButton_Click);
             // 
             // tableLayoutPanel1
@@ -285,6 +287,17 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(483, 34);
             this.tableLayoutPanel2.TabIndex = 21;
             // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label8.Location = new System.Drawing.Point(3, 8);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(54, 17);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Input:";
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -307,17 +320,6 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(483, 34);
             this.tableLayoutPanel3.TabIndex = 22;
-            // 
-            // label8
-            // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label8.Location = new System.Drawing.Point(3, 8);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(54, 17);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "Input:";
             // 
             // MainForm
             // 

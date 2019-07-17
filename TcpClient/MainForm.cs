@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Concurrent;
+using System.Drawing;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
@@ -52,10 +53,12 @@ namespace TcpClient
             if (connected)
             {
                 connectButton.Text = Resources.Disconnect;
+                connectButton.BackColor = Color.Lime;
             }
             else
             {
                 connectButton.Text = Resources.Connect;
+                connectButton.BackColor = Color.WhiteSmoke;
             }
 
             sendButton.Enabled = connected;

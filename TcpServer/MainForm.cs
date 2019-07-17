@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Concurrent;
+using System.Drawing;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -53,10 +54,12 @@ namespace TcpServer
             if (connected)
             {
                 startButton.Text = Resources.Stop;
+                startButton.BackColor = Color.Lime;
             }
             else
             {
                 startButton.Text = Resources.Start;
+                startButton.BackColor = Color.WhiteSmoke;
             }
 
             sendButton.Enabled = connected;
