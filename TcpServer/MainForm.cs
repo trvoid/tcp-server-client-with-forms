@@ -98,7 +98,7 @@ namespace TcpServer
                             rlist.Add(client);
 
                             IPEndPoint ep = (IPEndPoint)client.RemoteEndPoint;
-                            LogInfo($"Connected from {ep.ToString()}");
+                            LogInfo($"Connection[{ep.ToString()}] established.");
                         }
                         else
                         {
@@ -121,7 +121,8 @@ namespace TcpServer
                             }
                             else
                             {
-                                LogInfo("Connection broken.");
+                                IPEndPoint ep = (IPEndPoint)((Socket)socket).RemoteEndPoint;
+                                LogInfo($"Connection[{ep.ToString()}] broken.");
                                 ((Socket)socket).Close();
                                 rlist.Remove(socket);
                             }
@@ -180,7 +181,7 @@ namespace TcpServer
                 keepRunning = false;
                 connected = false;
 
-                LogInfo("Stopped running.");
+                LogInfo("Server stopped running.");
 
                 UpdateFormByConnectionState();
             }

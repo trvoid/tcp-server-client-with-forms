@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Concurrent;
 using System.Drawing;
+using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
@@ -79,7 +80,8 @@ namespace TcpClient
                 client.Connect(address, port);
                 connected = true;
 
-                LogInfo("Connected to server!\n");
+                IPEndPoint ep = (IPEndPoint)client.RemoteEndPoint;
+                LogInfo($"Connection[{ep.ToString()}] established.\n");
             }
             catch (Exception ex)
             {
@@ -173,7 +175,8 @@ namespace TcpClient
                         }
                         else
                         {
-                            LogInfo("Connection broken.");
+                            IPEndPoint ep = (IPEndPoint)((Socket)socket).RemoteEndPoint;
+                            LogInfo($"Connection[{ep.ToString()}] broken.");
                             ((Socket)socket).Close();
                             rlist.Remove(socket);
                         }
@@ -218,7 +221,7 @@ namespace TcpClient
                 keepRunning = false;
                 connected = false;
 
-                LogInfo("Stopped running.");
+                LogInfo("Client stopped running.");
 
                 UpdateFormByConnectionState();
             }
