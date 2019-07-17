@@ -107,17 +107,7 @@ namespace TcpServer
                             if (count > 0)
                             {
                                 string receivedStr = Encoding.UTF8.GetString(buffer, 0, count);
-                                string[] lines = receivedStr.Split(
-                                    new[] { "\r\n", "\r", "\n" },
-                                    StringSplitOptions.None
-                                );
-                                foreach (var line in lines)
-                                {
-                                    if (!string.IsNullOrEmpty(line))
-                                    {
-                                        LogReceived($"{line}");
-                                    }
-                                }
+                                LogReceived($"{receivedStr.TrimEnd('\r', '\n')}");
                             }
                             else
                             {
