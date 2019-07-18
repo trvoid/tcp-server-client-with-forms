@@ -80,19 +80,18 @@ namespace TcpClient
 
                 IPEndPoint ep = (IPEndPoint)client.RemoteEndPoint;
                 LogInfo($"Connection[{ep.ToString()}] established.\n");
+
+                return client;
             }
             catch (Exception ex)
             {
-                LogInfo($"{ex.ToString()}");
-
                 if (client != null)
                 {
                     client.Close();
-                    client = null;
                 }
-            }
 
-            return client;
+                throw ex;
+            }
         }
         
         private void ConnectButton_Click(object sender, EventArgs e)
@@ -115,7 +114,7 @@ namespace TcpClient
             }
             catch (Exception ex)
             {
-                LogInfo($"{ex.ToString()}");
+                LogInfo(ex.Message);
             }
             finally
             {
@@ -227,7 +226,7 @@ namespace TcpClient
             }
             catch (Exception ex)
             {
-                LogInfo($"{ex.ToString()}");
+                LogInfo(ex.Message);
             }
         }
 

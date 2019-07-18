@@ -206,19 +206,18 @@ namespace TcpServer
                 server.Listen(2);
 
                 connected = true;
+
+                return server;
             }
             catch (Exception ex)
             {
-                LogInfo(ex.ToString());
-
                 if (server != null)
                 {
                     server.Close();
-                    server = null;
                 }
-            }
 
-            return server;
+                throw ex;
+            }
         }
         
         private void StartButton_Click(object sender, EventArgs e)
@@ -243,7 +242,7 @@ namespace TcpServer
             }
             catch (Exception ex)
             {
-                LogInfo(ex.ToString());
+                LogInfo(ex.Message);
             }
             finally
             {
@@ -263,7 +262,7 @@ namespace TcpServer
             }
             catch (Exception ex)
             {
-                LogInfo($"{ex.ToString()}");
+                LogInfo(ex.Message);
             }
         }
 
