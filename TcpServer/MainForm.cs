@@ -279,5 +279,20 @@ namespace TcpServer
                 SendButton_Click(sender, e);
             }
         }
+
+        private void ClearSentButton_Click(object sender, EventArgs e)
+        {
+            sentTextBox.Clear();
+        }
+
+        private void ClearReceivedButton_Click(object sender, EventArgs e)
+        {
+            receivedTextBox.Clear();
+        }
+
+        private void ClearLogButton_Click(object sender, EventArgs e)
+        {
+            logTextBox.Clear();
+        }
     }
 }
