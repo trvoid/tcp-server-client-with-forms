@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Net;
 using System.Net.Sockets;
@@ -19,6 +20,7 @@ namespace TcpServer
         private bool connected = false;
         private bool keepRunning = true;
 
+        private Dictionary<IPEndPoint, string> clientDictionary = new Dictionary<IPEndPoint, string>();
         private ConcurrentQueue<string> txQueue = new ConcurrentQueue<string>();
 
         public MainForm()
@@ -61,8 +63,16 @@ namespace TcpServer
                 startButton.Text = Resources.Start;
                 startButton.BackColor = Color.WhiteSmoke;
             }
+        }
 
-            sendButton.Enabled = connected;
+        private void ClientConnected(IPEndPoint clientEp)
+        {
+            clientDictionary.Add(clientEp, "");
+        }
+
+        private void ClientDisconnected(IPEndPoint clientEp)
+        {
+            clientDictionary.Remove(clientEp);
         }
         
         private void ListenHandler(object obj)
@@ -96,8 +106,9 @@ namespace TcpServer
                         {
                             Socket client = server.Accept();
                             rlist.Add(client);
-
+                            
                             IPEndPoint ep = (IPEndPoint)client.RemoteEndPoint;
+                            ClientConnected(ep);
                             LogInfo($"Connection[{ep.ToString()}] established.");
                         }
                         else
@@ -112,6 +123,7 @@ namespace TcpServer
                             else
                             {
                                 IPEndPoint ep = (IPEndPoint)((Socket)socket).RemoteEndPoint;
+                                ClientDisconnected(ep);
                                 LogInfo($"Connection[{ep.ToString()}] broken.");
                                 ((Socket)socket).Close();
                                 rlist.Remove(socket);
@@ -143,7 +155,7 @@ namespace TcpServer
                             }
                         }
                     }
-                }
+                } // while (keepRunning && rlist.Count > 0)
             }
             catch (Exception ex)
             {
@@ -167,6 +179,8 @@ namespace TcpServer
 
                     rlist.Clear();
                 }
+
+                clientDictionary.Clear();
 
                 keepRunning = false;
                 connected = false;
@@ -241,7 +255,7 @@ namespace TcpServer
         {
             try
             {
-                if (connected)
+                if (clientDictionary.Count > 0)
                 {
                     string lineToSend = $"{sendTextBox.Text}\n";
                     txQueue.Enqueue(lineToSend);

@@ -61,8 +61,6 @@ namespace TcpClient
                 connectButton.Text = Resources.Connect;
                 connectButton.BackColor = Color.WhiteSmoke;
             }
-
-            sendButton.Enabled = connected;
         }
 
         private Socket OpenConnection()
