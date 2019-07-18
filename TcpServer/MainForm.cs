@@ -23,6 +23,8 @@ namespace TcpServer
         private Dictionary<IPEndPoint, string> clientDictionary = new Dictionary<IPEndPoint, string>();
         private ConcurrentQueue<string> txQueue = new ConcurrentQueue<string>();
 
+        private static readonly object stopLock = new object();
+
         public MainForm()
         {
             InitializeComponent();
@@ -182,12 +184,15 @@ namespace TcpServer
 
                 clientDictionary.Clear();
 
-                keepRunning = false;
-                connected = false;
-
                 LogInfo("Server stopped running.");
 
-                UpdateFormByConnectionState();
+                lock (stopLock)
+                {
+                    keepRunning = false;
+                    connected = false;
+
+                    Monitor.PulseAll(stopLock);
+                }
             }
         }
 
@@ -219,6 +224,16 @@ namespace TcpServer
                 throw ex;
             }
         }
+
+        private void CloseConnection()
+        {
+            lock (stopLock)
+            {
+                keepRunning = false;
+                        
+                while (connected) Monitor.Wait(stopLock);
+            }
+        }
         
         private void StartButton_Click(object sender, EventArgs e)
         {
@@ -226,7 +241,9 @@ namespace TcpServer
             {
                 if (connected)
                 {
-                    keepRunning = false;
+                    CloseConnection();
+
+                    UpdateFormByConnectionState();
                 }
                 else
                 {
@@ -268,7 +285,7 @@ namespace TcpServer
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            keepRunning = false;
+            CloseConnection();
         }
 
         private void SendTextBox_KeyDown(object sender, KeyEventArgs e)

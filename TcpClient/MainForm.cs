@@ -21,6 +21,8 @@ namespace TcpClient
 
         private ConcurrentQueue<string> txQueue = new ConcurrentQueue<string>();
 
+        private static readonly object stopLock = new object();
+
         public MainForm()
         {
             InitializeComponent();
@@ -93,14 +95,26 @@ namespace TcpClient
                 throw ex;
             }
         }
-        
+
+        private void CloseConnection()
+        {
+            lock (stopLock)
+            {
+                keepRunning = false;
+
+                while (connected) Monitor.Wait(stopLock);
+            }
+        }
+
         private void ConnectButton_Click(object sender, EventArgs e)
         {
             try
             {
                 if (connected)
                 {
-                    keepRunning = false;
+                    CloseConnection();
+
+                    UpdateFormByConnectionState();
                 }
                 else
                 {
@@ -205,10 +219,15 @@ namespace TcpClient
                     rlist.Clear();
                 }
 
-                keepRunning = false;
-                connected = false;
-
                 LogInfo("Client stopped running.");
+
+                lock (stopLock)
+                {
+                    keepRunning = false;
+                    connected = false;
+
+                    Monitor.PulseAll(stopLock);
+                }
 
                 UpdateFormByConnectionState();
             }
@@ -232,7 +251,7 @@ namespace TcpClient
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            keepRunning = false;
+            CloseConnection();
         }
 
         private void SendTextBox_KeyDown(object sender, KeyEventArgs e)
