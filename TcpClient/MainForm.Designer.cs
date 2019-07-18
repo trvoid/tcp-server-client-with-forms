@@ -64,19 +64,17 @@
             this.label1.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.Location = new System.Drawing.Point(3, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 17);
+            this.label1.Size = new System.Drawing.Size(29, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Address:";
+            this.label1.Text = "IP:";
             // 
             // addressTextBox
             // 
-            this.addressTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.addressTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.addressTextBox.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.addressTextBox.Location = new System.Drawing.Point(90, 3);
+            this.addressTextBox.Location = new System.Drawing.Point(38, 3);
             this.addressTextBox.Name = "addressTextBox";
-            this.addressTextBox.Size = new System.Drawing.Size(104, 27);
+            this.addressTextBox.Size = new System.Drawing.Size(158, 27);
             this.addressTextBox.TabIndex = 1;
             this.addressTextBox.Text = "127.0.0.1";
             // 
@@ -85,7 +83,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(200, 8);
+            this.label2.Location = new System.Drawing.Point(202, 8);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 17);
             this.label2.TabIndex = 2;
@@ -93,10 +91,11 @@
             // 
             // portTextBox
             // 
+            this.portTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.portTextBox.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.portTextBox.Location = new System.Drawing.Point(254, 3);
+            this.portTextBox.Location = new System.Drawing.Point(256, 3);
             this.portTextBox.Name = "portTextBox";
-            this.portTextBox.Size = new System.Drawing.Size(100, 27);
+            this.portTextBox.Size = new System.Drawing.Size(80, 27);
             this.portTextBox.TabIndex = 2;
             this.portTextBox.Text = "2000";
             // 
@@ -184,6 +183,7 @@
             // 
             // sendButton
             // 
+            this.sendButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.sendButton.BackColor = System.Drawing.Color.WhiteSmoke;
             this.sendButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sendButton.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -213,7 +213,7 @@
             this.connectButton.BackColor = System.Drawing.Color.WhiteSmoke;
             this.connectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.connectButton.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.connectButton.Location = new System.Drawing.Point(360, 3);
+            this.connectButton.Location = new System.Drawing.Point(342, 3);
             this.connectButton.Name = "connectButton";
             this.connectButton.Size = new System.Drawing.Size(120, 28);
             this.connectButton.TabIndex = 3;
@@ -312,7 +312,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel3.ColumnCount = 5;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
@@ -353,7 +353,7 @@
             this.clearReceivedButton.Location = new System.Drawing.Point(3, 3);
             this.clearReceivedButton.Name = "clearReceivedButton";
             this.clearReceivedButton.Size = new System.Drawing.Size(140, 28);
-            this.clearReceivedButton.TabIndex = 0;
+            this.clearReceivedButton.TabIndex = 9;
             this.clearReceivedButton.Text = "Clear Received";
             this.clearReceivedButton.UseVisualStyleBackColor = true;
             this.clearReceivedButton.Click += new System.EventHandler(this.ClearReceivedButton_Click);
@@ -364,7 +364,7 @@
             this.clearSentButton.Location = new System.Drawing.Point(149, 3);
             this.clearSentButton.Name = "clearSentButton";
             this.clearSentButton.Size = new System.Drawing.Size(140, 28);
-            this.clearSentButton.TabIndex = 1;
+            this.clearSentButton.TabIndex = 10;
             this.clearSentButton.Text = "Clear Sent";
             this.clearSentButton.UseVisualStyleBackColor = true;
             this.clearSentButton.Click += new System.EventHandler(this.ClearSentButton_Click);
@@ -375,7 +375,7 @@
             this.clearLogButton.Location = new System.Drawing.Point(295, 3);
             this.clearLogButton.Name = "clearLogButton";
             this.clearLogButton.Size = new System.Drawing.Size(140, 28);
-            this.clearLogButton.TabIndex = 2;
+            this.clearLogButton.TabIndex = 11;
             this.clearLogButton.Text = "Clear Log";
             this.clearLogButton.UseVisualStyleBackColor = true;
             this.clearLogButton.Click += new System.EventHandler(this.ClearLogButton_Click);
