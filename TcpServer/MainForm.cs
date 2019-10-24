@@ -115,14 +115,25 @@ namespace TcpServer
                         }
                         else
                         {
-                            int count = ((Socket)socket).Receive(buffer);
-
-                            if (count > 0)
+                            try
                             {
-                                string receivedStr = Encoding.UTF8.GetString(buffer, 0, count);
-                                LogReceived($"{receivedStr.TrimEnd('\r', '\n')}");
+                                int count = ((Socket)socket).Receive(buffer);
+
+                                if (count > 0)
+                                {
+                                    string receivedStr = Encoding.UTF8.GetString(buffer, 0, count);
+                                    LogReceived($"{receivedStr.TrimEnd('\r', '\n')}");
+                                }
+                                else
+                                {
+                                    IPEndPoint ep = (IPEndPoint)((Socket)socket).RemoteEndPoint;
+                                    ClientDisconnected(ep);
+                                    LogInfo($"Connection[{ep.ToString()}] closed.");
+                                    ((Socket)socket).Close();
+                                    rlist.Remove(socket);
+                                }
                             }
-                            else
+                            catch (Exception e)
                             {
                                 IPEndPoint ep = (IPEndPoint)((Socket)socket).RemoteEndPoint;
                                 ClientDisconnected(ep);
@@ -135,10 +146,21 @@ namespace TcpServer
 
                     foreach (var socket in checkWrite)
                     {
-                        while (txQueue.TryDequeue(out string lineToSend))
+                        try
                         {
-                            ((Socket)socket).Send(Encoding.UTF8.GetBytes(lineToSend));
-                            LogSent($"{lineToSend}");
+                            while (txQueue.TryDequeue(out string lineToSend))
+                            {
+                                ((Socket)socket).Send(Encoding.UTF8.GetBytes(lineToSend));
+                                LogSent($"{lineToSend}");
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            IPEndPoint ep = (IPEndPoint)((Socket)socket).RemoteEndPoint;
+                            ClientDisconnected(ep);
+                            LogInfo($"Connection[{ep.ToString()}] broken.");
+                            ((Socket)socket).Close();
+                            rlist.Remove(socket);
                         }
                     }
 
