@@ -35,17 +35,17 @@ namespace TcpServer
 
         private void LogReceived(string s)
         {
-            receivedTextBox.AppendText($"<{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}> <{s}>\n");
+            receivedTextBox.AppendText($"<{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}> <{s}>\r\n");
         }
 
         private void LogSent(string s)
         {
-            sentTextBox.AppendText($"<{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}> <{s}>\n");
+            sentTextBox.AppendText($"<{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}> <{s}>\r\n");
         }
 
         private void LogInfo(string s)
         {
-            logTextBox.AppendText($"<{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}> <{s}>\n");
+            logTextBox.AppendText($"<{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}> <{s}>\r\n");
         }
 
         public void UpdateProductInfo()
@@ -150,7 +150,7 @@ namespace TcpServer
                         {
                             while (txQueue.TryDequeue(out string lineToSend))
                             {
-                                ((Socket)socket).Send(Encoding.UTF8.GetBytes(lineToSend));
+                                ((Socket)socket).Send(Encoding.UTF8.GetBytes($"{lineToSend}\r\n"));
                                 LogSent($"{lineToSend}");
                             }
                         }
@@ -295,7 +295,7 @@ namespace TcpServer
             {
                 if (clientDictionary.Count > 0)
                 {
-                    string lineToSend = $"{sendTextBox.Text}\n";
+                    string lineToSend = $"{sendTextBox.Text}";
                     txQueue.Enqueue(lineToSend);
                 }
             }
