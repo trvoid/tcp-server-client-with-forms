@@ -61,20 +61,20 @@ namespace TcpClient.Properties {
         }
         
         /// <summary>
-        ///   Connect과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Establish과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string Connect {
+        internal static string Establish {
             get {
-                return ResourceManager.GetString("Connect", resourceCulture);
+                return ResourceManager.GetString("Establish", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Disconnect과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Release과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string Disconnect {
+        internal static string Release {
             get {
-                return ResourceManager.GetString("Disconnect", resourceCulture);
+                return ResourceManager.GetString("Release", resourceCulture);
             }
         }
     }

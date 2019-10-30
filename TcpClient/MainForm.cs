@@ -41,7 +41,7 @@ namespace TcpClient
             sentTextBox.AppendText($"<{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}> <{s}>\r\n");
         }
 
-        private void LogInfo(string s)
+        private void LogDebug(string s)
         {
             logTextBox.AppendText($"<{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}> <{s}>\r\n");
         }
@@ -55,12 +55,12 @@ namespace TcpClient
         {
             if (connected)
             {
-                connectButton.Text = Resources.Disconnect;
+                connectButton.Text = Resources.Release;
                 connectButton.BackColor = Color.Lime;
             }
             else
             {
-                connectButton.Text = Resources.Connect;
+                connectButton.Text = Resources.Establish;
                 connectButton.BackColor = Color.WhiteSmoke;
             }
         }
@@ -71,17 +71,30 @@ namespace TcpClient
 
             try
             {
-                var address = addressTextBox.Text.Trim();
-                var port = int.Parse(portTextBox.Text.Trim());
+                var host = addressTextBox.Text.Trim();
+                if (string.IsNullOrEmpty(host))
+                {
+                    LogDebug("Host is empty.");
+                    return null;
+                }
+
+                var portStr = portTextBox.Text.Trim();
+                if (string.IsNullOrEmpty(portStr))
+                {
+                    LogDebug("Port is empty.");
+                    return null;
+                }
+
+                var port = int.Parse(portStr);
 
                 client = new Socket(AddressFamily.InterNetwork,
                              SocketType.Stream,
                              ProtocolType.Tcp);
-                client.Connect(address, port);
+                client.Connect(host, port);
                 connected = true;
 
                 IPEndPoint ep = (IPEndPoint)client.RemoteEndPoint;
-                LogInfo($"Connection[{ep.ToString()}] established.\n");
+                LogDebug($"Connection[{ep.ToString()}] established.\n");
 
                 return client;
             }
@@ -120,15 +133,18 @@ namespace TcpClient
                 {
                     Socket client = OpenConnection();
 
-                    keepRunning = true;
+                    if (client != null)
+                    {
+                        keepRunning = true;
 
-                    Thread thread = new Thread(ClientHandler);
-                    thread.Start(client);
+                        Thread thread = new Thread(ClientHandler);
+                        thread.Start(client);
+                    }
                 }
             }
             catch (Exception ex)
             {
-                LogInfo(ex.Message);
+                LogDebug(ex.Message);
             }
             finally
             {
@@ -179,7 +195,7 @@ namespace TcpClient
                             else
                             {
                                 IPEndPoint ep = (IPEndPoint)((Socket)socket).RemoteEndPoint;
-                                LogInfo($"Connection[{ep.ToString()}] broken.");
+                                LogDebug($"Connection[{ep.ToString()}] closed.");
                                 ((Socket)socket).Close();
                                 rlist.Remove(socket);
                             }
@@ -187,7 +203,7 @@ namespace TcpClient
                         catch (Exception e)
                         {
                             IPEndPoint ep = (IPEndPoint)((Socket)socket).RemoteEndPoint;
-                            LogInfo($"Connection[{ep.ToString()}] broken.");
+                            LogDebug($"Connection[{ep.ToString()}] broken.");
                             ((Socket)socket).Close();
                             rlist.Remove(socket);
                         }
@@ -206,7 +222,7 @@ namespace TcpClient
                         catch (Exception e)
                         {
                             IPEndPoint ep = (IPEndPoint)((Socket)socket).RemoteEndPoint;
-                            LogInfo($"Connection[{ep.ToString()}] broken.");
+                            LogDebug($"Connection[{ep.ToString()}] broken.");
                             ((Socket)socket).Close();
                             rlist.Remove(socket);
                         }
@@ -218,7 +234,7 @@ namespace TcpClient
             }
             catch (Exception ex)
             {
-                LogInfo($"{ex.ToString()}");
+                LogDebug($"{ex.ToString()}");
             }
             finally
             {
@@ -232,14 +248,14 @@ namespace TcpClient
                         }
                         catch (Exception ex)
                         {
-                            LogInfo(ex.ToString());
+                            LogDebug(ex.ToString());
                         }
                     }
 
                     rlist.Clear();
                 }
 
-                LogInfo("Client stopped running.");
+                LogDebug("Client stopped running.");
 
                 lock (stopLock)
                 {
@@ -265,7 +281,7 @@ namespace TcpClient
             }
             catch (Exception ex)
             {
-                LogInfo(ex.Message);
+                LogDebug(ex.Message);
             }
         }
 

@@ -117,10 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Connect" xml:space="preserve">
-    <value>Connect</value>
+  <data name="Establish" xml:space="preserve">
+    <value>Establish</value>
   </data>
-  <data name="Disconnect" xml:space="preserve">
-    <value>Disconnect</value>
+  <data name="Release" xml:space="preserve">
+    <value>Release</value>
   </data>
 </root>

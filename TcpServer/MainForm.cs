@@ -43,7 +43,7 @@ namespace TcpServer
             sentTextBox.AppendText($"<{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}> <{s}>\r\n");
         }
 
-        private void LogInfo(string s)
+        private void LogDebug(string s)
         {
             logTextBox.AppendText($"<{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}> <{s}>\r\n");
         }
@@ -111,7 +111,7 @@ namespace TcpServer
                             
                             IPEndPoint ep = (IPEndPoint)client.RemoteEndPoint;
                             ClientConnected(ep);
-                            LogInfo($"Connection[{ep.ToString()}] established.");
+                            LogDebug($"Connection[{ep.ToString()}] established.");
                         }
                         else
                         {
@@ -128,7 +128,7 @@ namespace TcpServer
                                 {
                                     IPEndPoint ep = (IPEndPoint)((Socket)socket).RemoteEndPoint;
                                     ClientDisconnected(ep);
-                                    LogInfo($"Connection[{ep.ToString()}] closed.");
+                                    LogDebug($"Connection[{ep.ToString()}] closed.");
                                     ((Socket)socket).Close();
                                     rlist.Remove(socket);
                                 }
@@ -137,7 +137,7 @@ namespace TcpServer
                             {
                                 IPEndPoint ep = (IPEndPoint)((Socket)socket).RemoteEndPoint;
                                 ClientDisconnected(ep);
-                                LogInfo($"Connection[{ep.ToString()}] broken.");
+                                LogDebug($"Connection[{ep.ToString()}] broken.");
                                 ((Socket)socket).Close();
                                 rlist.Remove(socket);
                             }
@@ -158,7 +158,7 @@ namespace TcpServer
                         {
                             IPEndPoint ep = (IPEndPoint)((Socket)socket).RemoteEndPoint;
                             ClientDisconnected(ep);
-                            LogInfo($"Connection[{ep.ToString()}] broken.");
+                            LogDebug($"Connection[{ep.ToString()}] broken.");
                             ((Socket)socket).Close();
                             rlist.Remove(socket);
                         }
@@ -183,7 +183,7 @@ namespace TcpServer
             }
             catch (Exception ex)
             {
-                LogInfo(ex.ToString());
+                LogDebug(ex.ToString());
             }
             finally
             {
@@ -197,7 +197,7 @@ namespace TcpServer
                         }
                         catch (Exception ex)
                         {
-                            LogInfo(ex.ToString());
+                            LogDebug(ex.ToString());
                         }
                     }
 
@@ -206,7 +206,7 @@ namespace TcpServer
 
                 clientDictionary.Clear();
 
-                LogInfo("Server stopped running.");
+                LogDebug("Server stopped running.");
 
                 lock (stopLock)
                 {
@@ -224,7 +224,14 @@ namespace TcpServer
 
             try
             {
-                var port = int.Parse(portTextBox.Text.Trim());
+                var portStr = portTextBox.Text.Trim();
+                if (string.IsNullOrEmpty(portStr))
+                {
+                    LogDebug("Port is empty.");
+                    return null;
+                }
+
+                var port = int.Parse(portStr);
 
                 server = new Socket(AddressFamily.InterNetwork,
                              SocketType.Stream,
@@ -271,17 +278,20 @@ namespace TcpServer
                 {
                     Socket server = OpenConnection();
 
-                    keepRunning = true;
+                    if (server != null)
+                    {
+                        keepRunning = true;
 
-                    Thread thread = new Thread(ListenHandler);
-                    thread.Start(server);
+                        Thread thread = new Thread(ListenHandler);
+                        thread.Start(server);
 
-                    LogInfo($"Server listening on {server.LocalEndPoint.ToString()} ...");
+                        LogDebug($"Server listening on {server.LocalEndPoint.ToString()} ...");
+                    }
                 }
             }
             catch (Exception ex)
             {
-                LogInfo(ex.Message);
+                LogDebug(ex.Message);
             }
             finally
             {
@@ -301,7 +311,7 @@ namespace TcpServer
             }
             catch (Exception ex)
             {
-                LogInfo(ex.Message);
+                LogDebug(ex.Message);
             }
         }
 
