@@ -17,7 +17,7 @@ Provides applications that can be utilized to test your own TCP server or client
 
 ### Screenshot
 
-![](C:\DevWork\Projects\Origo\tcp-server-client-with-forms\Doc\TcpServerForm.png)
+![](Doc/TcpServerForm.png)
 
 ## TCP client
 
@@ -29,4 +29,4 @@ Provides applications that can be utilized to test your own TCP server or client
 
 ### Screenshot
 
-![](C:\DevWork\Projects\Origo\tcp-server-client-with-forms\Doc\TcpClientForm.png)
+![](Doc/TcpClientForm.png)
