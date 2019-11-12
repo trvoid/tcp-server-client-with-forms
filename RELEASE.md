@@ -1,3 +1,9 @@
+## 0.2.1
+
+#### TcpClient & TcpServer
+
+1. Increased font size of **Received, Sent, and Debug** text boxes.
+
 ## 0.2.0
 
 #### TcpClient
