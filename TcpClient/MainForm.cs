@@ -16,6 +16,8 @@ namespace TcpClient
         private static readonly int RX_BUFFER_SIZE = 4 * 1024;
         private static readonly int SELECT_TIMEOUT = 100000; // in microseconds
 
+        private static readonly int MINIMUM_REPEAT_INTERVAL = 100; // in millis
+
         private bool connected = false;
         private bool keepRunning = true;
 
@@ -23,27 +25,32 @@ namespace TcpClient
 
         private static readonly object stopLock = new object();
 
+        private System.Windows.Forms.Timer repeatTimer = null;
+
         public MainForm()
         {
             InitializeComponent();
 
             UpdateProductInfo();
             UpdateFormByConnectionState();
+
+            repeatTimer = new System.Windows.Forms.Timer();
+            repeatTimer.Tick += new EventHandler(RepeatTimer_Event);
         }
 
         private void LogReceived(string s)
         {
-            receivedTextBox.AppendText($"<{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}> <{s}>\r\n");
+            receivedTextBox.AppendText($"<{DateTime.Now.ToString("yy-MM-dd HH:mm:ss")}> <{s}>\r\n");
         }
 
         private void LogSent(string s)
         {
-            sentTextBox.AppendText($"<{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}> <{s}>\r\n");
+            sentTextBox.AppendText($"<{DateTime.Now.ToString("yy-MM-dd HH:mm:ss")}> <{s}>\r\n");
         }
 
         private void LogDebug(string s)
         {
-            logTextBox.AppendText($"<{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}> <{s}>\r\n");
+            logTextBox.AppendText($"<{DateTime.Now.ToString("yy-MM-dd HH:mm:ss")}> <{s}>\r\n");
         }
 
         public void UpdateProductInfo()
@@ -62,7 +69,17 @@ namespace TcpClient
             {
                 connectButton.Text = Resources.Establish;
                 connectButton.BackColor = Color.WhiteSmoke;
+
+                if (repeatCheckBox.Checked)
+                {
+                    repeatCheckBox.Checked = false;
+                }
             }
+        }
+
+        private void RepeatTimer_Event(object sender, EventArgs e)
+        {
+            SendButton_Click(sender, e);
         }
 
         private Socket OpenConnection()
@@ -287,6 +304,8 @@ namespace TcpClient
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            repeatTimer.Stop();
+
             CloseConnection();
         }
 
@@ -311,6 +330,54 @@ namespace TcpClient
         private void ClearLogButton_Click(object sender, EventArgs e)
         {
             logTextBox.Clear();
+        }
+
+        private void RepeatCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (repeatCheckBox.Checked)
+            {
+                if (!connected)
+                {
+                    repeatCheckBox.Checked = false;
+                    LogDebug("Repeat is supported only when connected.");
+                    return;
+                }
+
+                bool result = int.TryParse(intervalTextBox.Text.Trim(), out int interval);
+                if (result)
+                {
+                    if (interval >= MINIMUM_REPEAT_INTERVAL)
+                    {
+                        repeatTimer.Interval = interval;
+                        repeatTimer.Start();
+                    }
+                    else
+                    {
+                        LogDebug("The minimum allowed value for interval is 100.");
+                    }
+                }
+                else
+                {
+                    LogDebug("The interval is not a valid integer.");
+                }
+            }
+            else
+            {
+                repeatTimer.Stop();
+            }
+
+            if (repeatTimer.Enabled)
+            {
+                intervalTextBox.Enabled = false;
+                sendTextBox.Enabled = false;
+                sendButton.Enabled = false;
+            }
+            else
+            {
+                intervalTextBox.Enabled = true;
+                sendTextBox.Enabled = true;
+                sendButton.Enabled = true;
+            }
         }
     }
 }
