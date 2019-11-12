@@ -35,17 +35,17 @@ namespace TcpServer
 
         private void LogReceived(string s)
         {
-            receivedTextBox.AppendText($"<{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}> <{s}>\r\n");
+            receivedTextBox.AppendText($"<{DateTime.Now.ToString("yy-MM-dd HH:mm:ss")}> <{s}>\r\n");
         }
 
         private void LogSent(string s)
         {
-            sentTextBox.AppendText($"<{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}> <{s}>\r\n");
+            sentTextBox.AppendText($"<{DateTime.Now.ToString("yy-MM-dd HH:mm:ss")}> <{s}>\r\n");
         }
 
         private void LogDebug(string s)
         {
-            logTextBox.AppendText($"<{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}> <{s}>\r\n");
+            logTextBox.AppendText($"<{DateTime.Now.ToString("yy-MM-dd HH:mm:ss")}> <{s}>\r\n");
         }
 
         public void UpdateProductInfo()
