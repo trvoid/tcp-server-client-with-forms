@@ -96,6 +96,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.receivedTextBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.receivedTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.receivedTextBox.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.receivedTextBox.Location = new System.Drawing.Point(3, 123);
             this.receivedTextBox.Multiline = true;
             this.receivedTextBox.Name = "receivedTextBox";
@@ -111,6 +112,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.sentTextBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.sentTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sentTextBox.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.sentTextBox.Location = new System.Drawing.Point(493, 123);
             this.sentTextBox.Multiline = true;
             this.sentTextBox.Name = "sentTextBox";
@@ -185,7 +187,7 @@
             this.logTextBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.logTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel1.SetColumnSpan(this.logTextBox, 2);
-            this.logTextBox.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.logTextBox.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.logTextBox.Location = new System.Drawing.Point(3, 438);
             this.logTextBox.Multiline = true;
             this.logTextBox.Name = "logTextBox";
