@@ -27,6 +27,8 @@ namespace TcpClient
 
         private System.Windows.Forms.Timer repeatTimer = null;
 
+        private static readonly Log logger = LogManager.GetLogger("MainForm");
+
         public MainForm()
         {
             InitializeComponent();
@@ -40,17 +42,20 @@ namespace TcpClient
 
         private void LogReceived(string s)
         {
-            receivedTextBox.AppendText($"<{DateTime.Now.ToString("yy-MM-dd HH:mm:ss")}> <{s}>\r\n");
+            logger.LogInfo($"Received:{s}");
+            receivedTextBox.AppendText($"<{DateTime.Now.ToString("yy-MM-dd HH:mm:ss.fff")}> <{s}>\r\n");
         }
 
         private void LogSent(string s)
         {
-            sentTextBox.AppendText($"<{DateTime.Now.ToString("yy-MM-dd HH:mm:ss")}> <{s}>\r\n");
+            logger.LogInfo($"Sent:{s}");
+            sentTextBox.AppendText($"<{DateTime.Now.ToString("yy-MM-dd HH:mm:ss.fff")}> <{s}>\r\n");
         }
 
         private void LogDebug(string s)
         {
-            logTextBox.AppendText($"<{DateTime.Now.ToString("yy-MM-dd HH:mm:ss")}> <{s}>\r\n");
+            logger.LogInfo($"Debug:{s}");
+            logTextBox.AppendText($"<{DateTime.Now.ToString("yy-MM-dd HH:mm:ss.fff")}> <{s}>\r\n");
         }
 
         public void UpdateProductInfo()
@@ -111,7 +116,7 @@ namespace TcpClient
                 connected = true;
 
                 IPEndPoint ep = (IPEndPoint)client.RemoteEndPoint;
-                LogDebug($"Connection[{ep.ToString()}] established.\n");
+                LogDebug($"Connection[{ep.ToString()}] established.");
 
                 return client;
             }

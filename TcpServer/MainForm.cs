@@ -25,6 +25,8 @@ namespace TcpServer
 
         private static readonly object stopLock = new object();
 
+        private static readonly Log logger = LogManager.GetLogger("MainForm");
+
         public MainForm()
         {
             InitializeComponent();
@@ -35,17 +37,20 @@ namespace TcpServer
 
         private void LogReceived(string s)
         {
-            receivedTextBox.AppendText($"<{DateTime.Now.ToString("yy-MM-dd HH:mm:ss")}> <{s}>\r\n");
+            logger.LogInfo($"Received:{s}");
+            receivedTextBox.AppendText($"<{DateTime.Now.ToString("yy-MM-dd HH:mm:ss.fff")}> <{s}>\r\n");
         }
 
         private void LogSent(string s)
         {
-            sentTextBox.AppendText($"<{DateTime.Now.ToString("yy-MM-dd HH:mm:ss")}> <{s}>\r\n");
+            logger.LogInfo($"Sent:{s}");
+            sentTextBox.AppendText($"<{DateTime.Now.ToString("yy-MM-dd HH:mm:ss.fff")}> <{s}>\r\n");
         }
 
         private void LogDebug(string s)
         {
-            logTextBox.AppendText($"<{DateTime.Now.ToString("yy-MM-dd HH:mm:ss")}> <{s}>\r\n");
+            logger.LogInfo($"Debug:{s}");
+            logTextBox.AppendText($"<{DateTime.Now.ToString("yy-MM-dd HH:mm:ss.fff")}> <{s}>\r\n");
         }
 
         public void UpdateProductInfo()
