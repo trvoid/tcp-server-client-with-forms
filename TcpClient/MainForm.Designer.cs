@@ -205,9 +205,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.sendTextBox.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.sendTextBox.Location = new System.Drawing.Point(63, 3);
+            this.sendTextBox.Location = new System.Drawing.Point(59, 3);
             this.sendTextBox.Name = "sendTextBox";
-            this.sendTextBox.Size = new System.Drawing.Size(291, 27);
+            this.sendTextBox.Size = new System.Drawing.Size(295, 27);
             this.sendTextBox.TabIndex = 4;
             this.sendTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SendTextBox_KeyDown);
             // 
@@ -294,9 +294,9 @@
             this.label8.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label8.Location = new System.Drawing.Point(3, 8);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(54, 17);
+            this.label8.Size = new System.Drawing.Size(50, 17);
             this.label8.TabIndex = 19;
-            this.label8.Text = "Input:";
+            this.label8.Text = "Text:";
             // 
             // tableLayoutPanel3
             // 

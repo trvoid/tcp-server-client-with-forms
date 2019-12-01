@@ -21,7 +21,7 @@ namespace TcpClient
         private bool connected = false;
         private bool keepRunning = true;
 
-        private ConcurrentQueue<string> txQueue = new ConcurrentQueue<string>();
+        private ConcurrentQueue<string> txQueue = null;
 
         private static readonly object stopLock = new object();
 
@@ -34,10 +34,11 @@ namespace TcpClient
             InitializeComponent();
 
             UpdateProductInfo();
-            UpdateFormByConnectionState();
 
             repeatTimer = new System.Windows.Forms.Timer();
             repeatTimer.Tick += new EventHandler(RepeatTimer_Event);
+
+            UpdateFormByConnectionState();
         }
 
         private void LogReceived(string s)
@@ -65,6 +66,10 @@ namespace TcpClient
 
         private void UpdateFormByConnectionState()
         {
+            addressTextBox.Enabled = !connected;
+            portTextBox.Enabled = !connected;
+            sendButton.Enabled = connected;
+
             if (connected)
             {
                 connectButton.Text = Resources.Release;
@@ -74,17 +79,24 @@ namespace TcpClient
             {
                 connectButton.Text = Resources.Establish;
                 connectButton.BackColor = Color.WhiteSmoke;
-
-                if (repeatCheckBox.Checked)
-                {
-                    repeatCheckBox.Checked = false;
-                }
             }
+        }
+
+        private void UpdateFormByRepeatTimerState()
+        {
+            repeatCheckBox.Enabled = !repeatTimer.Enabled;
+            intervalTextBox.Enabled = !repeatTimer.Enabled;
+            sendTextBox.Enabled = !repeatTimer.Enabled;
+
+            sendButton.Text = repeatTimer.Enabled ? "Stop": "Send";
         }
 
         private void RepeatTimer_Event(object sender, EventArgs e)
         {
-            SendButton_Click(sender, e);
+            if (connected)
+            {
+                txQueue.Enqueue(sendTextBox.Text);
+            }
         }
 
         private Socket OpenConnection()
@@ -148,8 +160,6 @@ namespace TcpClient
                 if (connected)
                 {
                     CloseConnection();
-
-                    UpdateFormByConnectionState();
                 }
                 else
                 {
@@ -158,6 +168,8 @@ namespace TcpClient
                     if (client != null)
                     {
                         keepRunning = true;
+
+                        txQueue = new ConcurrentQueue<string>();
 
                         Thread thread = new Thread(ClientHandler);
                         thread.Start(client);
@@ -287,7 +299,16 @@ namespace TcpClient
                     Monitor.PulseAll(stopLock);
                 }
 
-                UpdateFormByConnectionState();
+                if (repeatTimer.Enabled)
+                {
+                    repeatTimer.Stop();
+                }
+
+                Invoke((MethodInvoker)delegate
+                {
+                    UpdateFormByRepeatTimerState();
+                    UpdateFormByConnectionState();
+                });
             }
         }
 
@@ -295,15 +316,45 @@ namespace TcpClient
         {
             try
             {
-                if (connected)
+                if (repeatTimer.Enabled)
                 {
-                    string lineToSend = $"{sendTextBox.Text}";
-                    txQueue.Enqueue(lineToSend);
+                    repeatTimer.Stop();
+                }
+                else
+                {
+                    if (repeatCheckBox.Checked)
+                    {
+                        bool result = int.TryParse(intervalTextBox.Text.Trim(), out int interval);
+                        if (result)
+                        {
+                            if (interval >= MINIMUM_REPEAT_INTERVAL)
+                            {
+                                repeatTimer.Interval = interval;
+                                repeatTimer.Start();
+                            }
+                            else
+                            {
+                                LogDebug("The minimum allowed value for interval is 100.");
+                            }
+                        }
+                        else
+                        {
+                            LogDebug("The interval is not a valid integer.");
+                        }
+                    }
+                    else
+                    {
+                        txQueue.Enqueue(sendTextBox.Text);
+                    }
                 }
             }
             catch (Exception ex)
             {
                 LogDebug(ex.Message);
+            }
+            finally
+            {
+                UpdateFormByRepeatTimerState();
             }
         }
 
@@ -341,22 +392,10 @@ namespace TcpClient
         {
             if (repeatCheckBox.Checked)
             {
-                if (!connected)
-                {
-                    repeatCheckBox.Checked = false;
-                    LogDebug("Repeat is supported only when connected.");
-                    return;
-                }
-
                 bool result = int.TryParse(intervalTextBox.Text.Trim(), out int interval);
                 if (result)
                 {
-                    if (interval >= MINIMUM_REPEAT_INTERVAL)
-                    {
-                        repeatTimer.Interval = interval;
-                        repeatTimer.Start();
-                    }
-                    else
+                    if (interval < MINIMUM_REPEAT_INTERVAL)
                     {
                         LogDebug("The minimum allowed value for interval is 100.");
                     }
@@ -365,23 +404,6 @@ namespace TcpClient
                 {
                     LogDebug("The interval is not a valid integer.");
                 }
-            }
-            else
-            {
-                repeatTimer.Stop();
-            }
-
-            if (repeatTimer.Enabled)
-            {
-                intervalTextBox.Enabled = false;
-                sendTextBox.Enabled = false;
-                sendButton.Enabled = false;
-            }
-            else
-            {
-                intervalTextBox.Enabled = true;
-                sendTextBox.Enabled = true;
-                sendButton.Enabled = true;
             }
         }
     }
