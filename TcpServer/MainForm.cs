@@ -323,6 +323,11 @@ namespace TcpServer
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             CloseConnection();
+
+            Settings.Default.ListeningPort = portTextBox.Text;
+            Settings.Default.TextToSend = sendTextBox.Text;
+
+            Settings.Default.Save();
         }
 
         private void SendTextBox_KeyDown(object sender, KeyEventArgs e)
@@ -346,6 +351,19 @@ namespace TcpServer
         private void ClearLogButton_Click(object sender, EventArgs e)
         {
             logTextBox.Clear();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            if (Settings.Default.ListeningPort != null)
+            {
+                portTextBox.Text = Settings.Default.ListeningPort;
+            }
+
+            if (Settings.Default.TextToSend != null)
+            {
+                sendTextBox.Text = Settings.Default.TextToSend;
+            }
         }
     }
 }

@@ -65,18 +65,18 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("나눔고딕", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(3, 7);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Location = new System.Drawing.Point(3, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 20);
+            this.label1.Size = new System.Drawing.Size(32, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Host:";
+            this.label1.Text = "IP:";
             // 
             // addressTextBox
             // 
             this.addressTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.addressTextBox.Font = new System.Drawing.Font("나눔고딕", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.addressTextBox.Location = new System.Drawing.Point(58, 3);
+            this.addressTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.addressTextBox.Location = new System.Drawing.Point(41, 7);
             this.addressTextBox.Name = "addressTextBox";
             this.addressTextBox.Size = new System.Drawing.Size(140, 27);
             this.addressTextBox.TabIndex = 1;
@@ -86,18 +86,18 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("나눔고딕", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(204, 7);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Location = new System.Drawing.Point(187, 11);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 20);
+            this.label2.Size = new System.Drawing.Size(50, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Port:";
             // 
             // portTextBox
             // 
             this.portTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.portTextBox.Font = new System.Drawing.Font("나눔고딕", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.portTextBox.Location = new System.Drawing.Point(256, 3);
+            this.portTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.portTextBox.Location = new System.Drawing.Point(243, 7);
             this.portTextBox.Name = "portTextBox";
             this.portTextBox.Size = new System.Drawing.Size(59, 27);
             this.portTextBox.TabIndex = 2;
@@ -111,23 +111,23 @@
             this.logTextBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.logTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel1.SetColumnSpan(this.logTextBox, 2);
-            this.logTextBox.Font = new System.Drawing.Font("나눔고딕", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.logTextBox.Location = new System.Drawing.Point(3, 437);
+            this.logTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.logTextBox.Location = new System.Drawing.Point(3, 434);
             this.logTextBox.Multiline = true;
             this.logTextBox.Name = "logTextBox";
             this.logTextBox.ReadOnly = true;
             this.logTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.logTextBox.Size = new System.Drawing.Size(972, 268);
+            this.logTextBox.Size = new System.Drawing.Size(972, 263);
             this.logTextBox.TabIndex = 8;
             // 
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("나눔고딕", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(3, 404);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Location = new System.Drawing.Point(3, 401);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 20);
+            this.label4.Size = new System.Drawing.Size(69, 20);
             this.label4.TabIndex = 16;
             this.label4.Text = "Debug:";
             // 
@@ -135,10 +135,10 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("나눔고딕", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(492, 90);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Location = new System.Drawing.Point(492, 95);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 20);
+            this.label3.Size = new System.Drawing.Size(53, 20);
             this.label3.TabIndex = 15;
             this.label3.Text = "Sent:";
             // 
@@ -146,10 +146,10 @@
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("나눔고딕", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(3, 90);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label5.Location = new System.Drawing.Point(3, 95);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 20);
+            this.label5.Size = new System.Drawing.Size(92, 20);
             this.label5.TabIndex = 14;
             this.label5.Text = "Received:";
             // 
@@ -160,13 +160,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.sentTextBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.sentTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sentTextBox.Font = new System.Drawing.Font("나눔고딕", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.sentTextBox.Location = new System.Drawing.Point(492, 123);
+            this.sentTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.sentTextBox.Location = new System.Drawing.Point(492, 125);
             this.sentTextBox.Multiline = true;
             this.sentTextBox.Name = "sentTextBox";
             this.sentTextBox.ReadOnly = true;
             this.sentTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.sentTextBox.Size = new System.Drawing.Size(483, 268);
+            this.sentTextBox.Size = new System.Drawing.Size(483, 263);
             this.sentTextBox.TabIndex = 7;
             // 
             // receivedTextBox
@@ -176,13 +176,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.receivedTextBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.receivedTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.receivedTextBox.Font = new System.Drawing.Font("나눔고딕", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.receivedTextBox.Location = new System.Drawing.Point(3, 123);
+            this.receivedTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.receivedTextBox.Location = new System.Drawing.Point(3, 125);
             this.receivedTextBox.Multiline = true;
             this.receivedTextBox.Name = "receivedTextBox";
             this.receivedTextBox.ReadOnly = true;
             this.receivedTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.receivedTextBox.Size = new System.Drawing.Size(483, 268);
+            this.receivedTextBox.Size = new System.Drawing.Size(483, 263);
             this.receivedTextBox.TabIndex = 6;
             // 
             // sendButton
@@ -190,10 +190,10 @@
             this.sendButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.sendButton.BackColor = System.Drawing.Color.WhiteSmoke;
             this.sendButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.sendButton.Font = new System.Drawing.Font("나눔고딕", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.sendButton.Location = new System.Drawing.Point(360, 3);
+            this.sendButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.sendButton.Location = new System.Drawing.Point(360, 5);
             this.sendButton.Name = "sendButton";
-            this.sendButton.Size = new System.Drawing.Size(120, 28);
+            this.sendButton.Size = new System.Drawing.Size(120, 32);
             this.sendButton.TabIndex = 5;
             this.sendButton.Text = "Send";
             this.sendButton.UseVisualStyleBackColor = false;
@@ -201,13 +201,11 @@
             // 
             // sendTextBox
             // 
-            this.sendTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.sendTextBox.Font = new System.Drawing.Font("나눔고딕", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.sendTextBox.Location = new System.Drawing.Point(56, 3);
+            this.sendTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.sendTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.sendTextBox.Location = new System.Drawing.Point(60, 7);
             this.sendTextBox.Name = "sendTextBox";
-            this.sendTextBox.Size = new System.Drawing.Size(298, 27);
+            this.sendTextBox.Size = new System.Drawing.Size(294, 27);
             this.sendTextBox.TabIndex = 4;
             this.sendTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SendTextBox_KeyDown);
             // 
@@ -216,10 +214,10 @@
             this.connectButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.connectButton.BackColor = System.Drawing.Color.WhiteSmoke;
             this.connectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.connectButton.Font = new System.Drawing.Font("나눔고딕", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.connectButton.Location = new System.Drawing.Point(321, 3);
+            this.connectButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.connectButton.Location = new System.Drawing.Point(308, 5);
             this.connectButton.Name = "connectButton";
-            this.connectButton.Size = new System.Drawing.Size(120, 28);
+            this.connectButton.Size = new System.Drawing.Size(120, 32);
             this.connectButton.TabIndex = 3;
             this.connectButton.Text = "Establish";
             this.connectButton.UseVisualStyleBackColor = false;
@@ -248,12 +246,12 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 7;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(978, 748);
             this.tableLayoutPanel1.TabIndex = 21;
             // 
@@ -261,10 +259,10 @@
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 8);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(3, 7);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(122, 23);
+            this.label6.Size = new System.Drawing.Size(129, 25);
             this.label6.TabIndex = 0;
             this.label6.Text = "Connection:";
             // 
@@ -284,17 +282,17 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(483, 34);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(483, 42);
             this.tableLayoutPanel2.TabIndex = 21;
             // 
             // label8
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("나눔고딕", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label8.Location = new System.Drawing.Point(3, 7);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label8.Location = new System.Drawing.Point(3, 11);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(47, 20);
+            this.label8.Size = new System.Drawing.Size(51, 20);
             this.label8.TabIndex = 19;
             this.label8.Text = "Text:";
             // 
@@ -318,7 +316,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(483, 34);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(483, 42);
             this.tableLayoutPanel3.TabIndex = 22;
             // 
             // tableLayoutPanel4
@@ -333,19 +331,20 @@
             this.tableLayoutPanel4.Controls.Add(this.clearReceivedButton, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.clearSentButton, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.clearLogButton, 2, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 711);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 703);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(483, 34);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(483, 42);
             this.tableLayoutPanel4.TabIndex = 23;
             // 
             // clearReceivedButton
             // 
-            this.clearReceivedButton.Font = new System.Drawing.Font("나눔고딕", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.clearReceivedButton.Location = new System.Drawing.Point(3, 3);
+            this.clearReceivedButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.clearReceivedButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearReceivedButton.Location = new System.Drawing.Point(3, 5);
             this.clearReceivedButton.Name = "clearReceivedButton";
-            this.clearReceivedButton.Size = new System.Drawing.Size(140, 28);
+            this.clearReceivedButton.Size = new System.Drawing.Size(140, 32);
             this.clearReceivedButton.TabIndex = 9;
             this.clearReceivedButton.Text = "Clear Received";
             this.clearReceivedButton.UseVisualStyleBackColor = true;
@@ -353,10 +352,11 @@
             // 
             // clearSentButton
             // 
-            this.clearSentButton.Font = new System.Drawing.Font("나눔고딕", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.clearSentButton.Location = new System.Drawing.Point(149, 3);
+            this.clearSentButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.clearSentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearSentButton.Location = new System.Drawing.Point(149, 5);
             this.clearSentButton.Name = "clearSentButton";
-            this.clearSentButton.Size = new System.Drawing.Size(140, 28);
+            this.clearSentButton.Size = new System.Drawing.Size(140, 32);
             this.clearSentButton.TabIndex = 10;
             this.clearSentButton.Text = "Clear Sent";
             this.clearSentButton.UseVisualStyleBackColor = true;
@@ -364,10 +364,11 @@
             // 
             // clearLogButton
             // 
-            this.clearLogButton.Font = new System.Drawing.Font("나눔고딕", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.clearLogButton.Location = new System.Drawing.Point(295, 3);
+            this.clearLogButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.clearLogButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearLogButton.Location = new System.Drawing.Point(295, 5);
             this.clearLogButton.Name = "clearLogButton";
-            this.clearLogButton.Size = new System.Drawing.Size(140, 28);
+            this.clearLogButton.Size = new System.Drawing.Size(140, 32);
             this.clearLogButton.TabIndex = 11;
             this.clearLogButton.Text = "Clear Debug";
             this.clearLogButton.UseVisualStyleBackColor = true;
@@ -398,11 +399,11 @@
             // 
             this.repeatCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.repeatCheckBox.AutoSize = true;
-            this.repeatCheckBox.Font = new System.Drawing.Font("나눔고딕", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.repeatCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.repeatCheckBox.Location = new System.Drawing.Point(3, 5);
             this.repeatCheckBox.Name = "repeatCheckBox";
             this.repeatCheckBox.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            this.repeatCheckBox.Size = new System.Drawing.Size(105, 24);
+            this.repeatCheckBox.Size = new System.Drawing.Size(110, 24);
             this.repeatCheckBox.TabIndex = 0;
             this.repeatCheckBox.Text = "Repeat";
             this.repeatCheckBox.UseVisualStyleBackColor = true;
@@ -412,18 +413,18 @@
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("나눔고딕", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.Location = new System.Drawing.Point(114, 7);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label7.Location = new System.Drawing.Point(119, 7);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(104, 20);
+            this.label7.Size = new System.Drawing.Size(116, 20);
             this.label7.TabIndex = 1;
             this.label7.Text = "Interval(ms):";
             // 
             // intervalTextBox
             // 
             this.intervalTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.intervalTextBox.Font = new System.Drawing.Font("나눔고딕", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.intervalTextBox.Location = new System.Drawing.Point(224, 3);
+            this.intervalTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.intervalTextBox.Location = new System.Drawing.Point(241, 3);
             this.intervalTextBox.Name = "intervalTextBox";
             this.intervalTextBox.Size = new System.Drawing.Size(77, 27);
             this.intervalTextBox.TabIndex = 2;
@@ -442,6 +443,7 @@
             this.Name = "MainForm";
             this.Text = "TCP client";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);

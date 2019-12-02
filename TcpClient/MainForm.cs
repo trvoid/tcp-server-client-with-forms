@@ -363,6 +363,18 @@ namespace TcpClient
             repeatTimer.Stop();
 
             CloseConnection();
+
+            Settings.Default.ServerIp = addressTextBox.Text;
+            Settings.Default.ServerPort = portTextBox.Text;
+            Settings.Default.RepeatChecked = repeatCheckBox.Checked;
+            if (int.TryParse(intervalTextBox.Text, out int repeatInterval))
+            {
+                Settings.Default.RepeatInterval = repeatInterval;
+            }
+            Settings.Default.ServerPort = portTextBox.Text;
+            Settings.Default.TextToSend = sendTextBox.Text;
+
+            Settings.Default.Save();
         }
 
         private void SendTextBox_KeyDown(object sender, KeyEventArgs e)
@@ -404,6 +416,28 @@ namespace TcpClient
                 {
                     LogDebug("The interval is not a valid integer.");
                 }
+            }
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            if (Settings.Default.ServerIp != null)
+            {
+                addressTextBox.Text = Settings.Default.ServerIp;
+            }
+
+            if (Settings.Default.ServerPort != null)
+            {
+                portTextBox.Text = Settings.Default.ServerPort;
+            }
+
+            repeatCheckBox.Checked = Settings.Default.RepeatChecked;
+
+            intervalTextBox.Text = Settings.Default.RepeatInterval.ToString();
+
+            if (Settings.Default.TextToSend != null)
+            {
+                sendTextBox.Text = Settings.Default.TextToSend;
             }
         }
     }
