@@ -326,9 +326,17 @@ namespace TcpServer
 
             Settings.Default.ListeningPort = portTextBox.Text;
             Settings.Default.TextToSend = sendTextBox.Text;
-
-            Settings.Default.WindowLocation = Location;
-            Settings.Default.WindowSize = Size;
+            
+            if (WindowState == FormWindowState.Normal)
+            {
+                Settings.Default.WindowLocation = Location;
+                Settings.Default.WindowSize = Size;
+            }
+            else
+            {
+                Settings.Default.WindowLocation = RestoreBounds.Location;
+                Settings.Default.WindowSize = RestoreBounds.Size;
+            }
 
             Settings.Default.Save();
         }
@@ -367,7 +375,7 @@ namespace TcpServer
             {
                 sendTextBox.Text = Settings.Default.TextToSend;
             }
-
+            
             if (Settings.Default.WindowLocation != null)
             {
                 Location = Settings.Default.WindowLocation;

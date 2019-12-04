@@ -374,8 +374,16 @@ namespace TcpClient
             Settings.Default.ServerPort = portTextBox.Text;
             Settings.Default.TextToSend = sendTextBox.Text;
 
-            Settings.Default.WindowLocation = Location;
-            Settings.Default.WindowSize = Size;
+            if (WindowState == FormWindowState.Normal)
+            {
+                Settings.Default.WindowLocation = Location;
+                Settings.Default.WindowSize = Size;
+            }
+            else
+            {
+                Settings.Default.WindowLocation = RestoreBounds.Location;
+                Settings.Default.WindowSize = RestoreBounds.Size;
+            }
 
             Settings.Default.Save();
         }
