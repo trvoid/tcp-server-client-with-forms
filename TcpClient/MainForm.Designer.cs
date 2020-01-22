@@ -119,7 +119,7 @@
             this.logTextBox.Name = "logTextBox";
             this.logTextBox.ReadOnly = true;
             this.logTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.logTextBox.Size = new System.Drawing.Size(972, 263);
+            this.logTextBox.Size = new System.Drawing.Size(1172, 263);
             this.logTextBox.TabIndex = 8;
             // 
             // label4
@@ -140,7 +140,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(492, 93);
+            this.label3.Location = new System.Drawing.Point(592, 93);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 23);
             this.label3.TabIndex = 15;
@@ -166,12 +166,12 @@
             this.sentTextBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.sentTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.sentTextBox.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sentTextBox.Location = new System.Drawing.Point(492, 125);
+            this.sentTextBox.Location = new System.Drawing.Point(592, 125);
             this.sentTextBox.Multiline = true;
             this.sentTextBox.Name = "sentTextBox";
             this.sentTextBox.ReadOnly = true;
             this.sentTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.sentTextBox.Size = new System.Drawing.Size(483, 263);
+            this.sentTextBox.Size = new System.Drawing.Size(583, 263);
             this.sentTextBox.TabIndex = 7;
             // 
             // receivedTextBox
@@ -187,7 +187,7 @@
             this.receivedTextBox.Name = "receivedTextBox";
             this.receivedTextBox.ReadOnly = true;
             this.receivedTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.receivedTextBox.Size = new System.Drawing.Size(483, 263);
+            this.receivedTextBox.Size = new System.Drawing.Size(583, 263);
             this.receivedTextBox.TabIndex = 6;
             // 
             // sendButton
@@ -196,7 +196,8 @@
             this.sendButton.BackColor = System.Drawing.Color.WhiteSmoke;
             this.sendButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sendButton.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sendButton.Location = new System.Drawing.Point(360, 5);
+            this.sendButton.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.sendButton.Location = new System.Drawing.Point(460, 5);
             this.sendButton.Name = "sendButton";
             this.sendButton.Size = new System.Drawing.Size(120, 32);
             this.sendButton.TabIndex = 5;
@@ -210,7 +211,7 @@
             this.sendTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.sendTextBox.Location = new System.Drawing.Point(72, 7);
             this.sendTextBox.Name = "sendTextBox";
-            this.sendTextBox.Size = new System.Drawing.Size(282, 27);
+            this.sendTextBox.Size = new System.Drawing.Size(382, 27);
             this.sendTextBox.TabIndex = 4;
             this.sendTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SendTextBox_KeyDown);
             // 
@@ -220,6 +221,7 @@
             this.connectButton.BackColor = System.Drawing.Color.WhiteSmoke;
             this.connectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.connectButton.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.connectButton.ForeColor = System.Drawing.SystemColors.WindowText;
             this.connectButton.Location = new System.Drawing.Point(326, 5);
             this.connectButton.Name = "connectButton";
             this.connectButton.Size = new System.Drawing.Size(120, 32);
@@ -257,7 +259,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(978, 748);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1178, 748);
             this.tableLayoutPanel1.TabIndex = 21;
             // 
             // label6
@@ -284,11 +286,11 @@
             this.tableLayoutPanel2.Controls.Add(this.sendTextBox, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.sendButton, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.label8, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(492, 43);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(592, 43);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(483, 42);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(583, 42);
             this.tableLayoutPanel2.TabIndex = 21;
             // 
             // label8
@@ -323,7 +325,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(483, 42);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(583, 42);
             this.tableLayoutPanel3.TabIndex = 22;
             // 
             // tableLayoutPanel4
@@ -342,7 +344,7 @@
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(483, 42);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(583, 42);
             this.tableLayoutPanel4.TabIndex = 23;
             // 
             // clearReceivedButton
@@ -395,11 +397,11 @@
             this.tableLayoutPanel5.Controls.Add(this.repeatCheckBox, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.label7, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.intervalTextBox, 2, 0);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(492, 3);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(592, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(483, 34);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(583, 34);
             this.tableLayoutPanel5.TabIndex = 24;
             // 
             // repeatCheckBox
@@ -445,7 +447,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(982, 753);
+            this.ClientSize = new System.Drawing.Size(1182, 753);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
