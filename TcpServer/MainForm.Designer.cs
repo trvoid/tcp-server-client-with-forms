@@ -57,10 +57,11 @@
             // portTextBox
             // 
             this.portTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.portTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.portTextBox.Location = new System.Drawing.Point(59, 7);
+            this.portTextBox.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.portTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.portTextBox.Location = new System.Drawing.Point(76, 6);
             this.portTextBox.Name = "portTextBox";
-            this.portTextBox.Size = new System.Drawing.Size(80, 27);
+            this.portTextBox.Size = new System.Drawing.Size(80, 30);
             this.portTextBox.TabIndex = 1;
             this.portTextBox.Text = "2000";
             // 
@@ -68,19 +69,21 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(3, 11);
+            this.label1.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label1.Location = new System.Drawing.Point(3, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 20);
+            this.label1.Size = new System.Drawing.Size(67, 23);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Port:";
+            this.label1.Text = "PORT:";
             // 
             // startButton
             // 
             this.startButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.startButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.startButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startButton.Location = new System.Drawing.Point(145, 5);
+            this.startButton.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.startButton.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.startButton.Location = new System.Drawing.Point(162, 5);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(120, 32);
             this.startButton.TabIndex = 2;
@@ -95,7 +98,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.receivedTextBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.receivedTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.receivedTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.receivedTextBox.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.receivedTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
             this.receivedTextBox.Location = new System.Drawing.Point(3, 125);
             this.receivedTextBox.Multiline = true;
             this.receivedTextBox.Name = "receivedTextBox";
@@ -111,7 +115,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.sentTextBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.sentTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sentTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.sentTextBox.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.sentTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
             this.sentTextBox.Location = new System.Drawing.Point(493, 125);
             this.sentTextBox.Multiline = true;
             this.sentTextBox.Name = "sentTextBox";
@@ -124,10 +129,11 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(3, 95);
+            this.label2.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label2.Location = new System.Drawing.Point(3, 93);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 20);
+            this.label2.Size = new System.Drawing.Size(98, 23);
             this.label2.TabIndex = 6;
             this.label2.Text = "Received:";
             // 
@@ -135,20 +141,22 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(493, 95);
+            this.label3.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label3.Location = new System.Drawing.Point(493, 93);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 20);
+            this.label3.Size = new System.Drawing.Size(57, 23);
             this.label3.TabIndex = 7;
             this.label3.Text = "Sent:";
             // 
             // sendTextBox
             // 
             this.sendTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.sendTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.sendTextBox.Location = new System.Drawing.Point(60, 7);
+            this.sendTextBox.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.sendTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.sendTextBox.Location = new System.Drawing.Point(72, 6);
             this.sendTextBox.Name = "sendTextBox";
-            this.sendTextBox.Size = new System.Drawing.Size(295, 27);
+            this.sendTextBox.Size = new System.Drawing.Size(283, 30);
             this.sendTextBox.TabIndex = 3;
             this.sendTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SendTextBox_KeyDown);
             // 
@@ -156,7 +164,8 @@
             // 
             this.sendButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.sendButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.sendButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.sendButton.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.sendButton.ForeColor = System.Drawing.SystemColors.WindowText;
             this.sendButton.Location = new System.Drawing.Point(361, 5);
             this.sendButton.Name = "sendButton";
             this.sendButton.Size = new System.Drawing.Size(120, 32);
@@ -169,10 +178,11 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(3, 402);
+            this.label4.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label4.Location = new System.Drawing.Point(3, 400);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 20);
+            this.label4.Size = new System.Drawing.Size(78, 23);
             this.label4.TabIndex = 10;
             this.label4.Text = "Debug:";
             // 
@@ -184,7 +194,8 @@
             this.logTextBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.logTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel1.SetColumnSpan(this.logTextBox, 2);
-            this.logTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.logTextBox.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.logTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
             this.logTextBox.Location = new System.Drawing.Point(3, 435);
             this.logTextBox.Multiline = true;
             this.logTextBox.Name = "logTextBox";
@@ -246,7 +257,8 @@
             // clearReceivedButton
             // 
             this.clearReceivedButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.clearReceivedButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearReceivedButton.Font = new System.Drawing.Font("나눔고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.clearReceivedButton.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.clearReceivedButton.Location = new System.Drawing.Point(3, 5);
             this.clearReceivedButton.Name = "clearReceivedButton";
             this.clearReceivedButton.Size = new System.Drawing.Size(140, 32);
@@ -258,7 +270,8 @@
             // clearSentButton
             // 
             this.clearSentButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.clearSentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearSentButton.Font = new System.Drawing.Font("나눔고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.clearSentButton.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.clearSentButton.Location = new System.Drawing.Point(149, 5);
             this.clearSentButton.Name = "clearSentButton";
             this.clearSentButton.Size = new System.Drawing.Size(140, 32);
@@ -270,7 +283,8 @@
             // clearLogButton
             // 
             this.clearLogButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.clearLogButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearLogButton.Font = new System.Drawing.Font("나눔고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.clearLogButton.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.clearLogButton.Location = new System.Drawing.Point(295, 5);
             this.clearLogButton.Name = "clearLogButton";
             this.clearLogButton.Size = new System.Drawing.Size(140, 32);
@@ -321,23 +335,25 @@
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.Location = new System.Drawing.Point(3, 11);
+            this.label7.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label7.Location = new System.Drawing.Point(3, 9);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(51, 20);
+            this.label7.Size = new System.Drawing.Size(63, 23);
             this.label7.TabIndex = 10;
-            this.label7.Text = "Text:";
+            this.label7.Text = "TEXT:";
             // 
             // label5
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(3, 7);
+            this.label5.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label5.Location = new System.Drawing.Point(3, 8);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(106, 25);
+            this.label5.Size = new System.Drawing.Size(110, 23);
             this.label5.TabIndex = 14;
-            this.label5.Text = "Listening:";
+            this.label5.Text = "LISTENING";
             // 
             // MainForm
             // 
