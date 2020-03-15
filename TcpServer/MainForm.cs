@@ -20,7 +20,7 @@ namespace TcpServer
         private bool connected = false;
         private bool keepRunning = true;
 
-        private Dictionary<IPEndPoint, string> clientDictionary = new Dictionary<IPEndPoint, string>();
+        private Dictionary<IPEndPoint, Socket> clientDictionary = new Dictionary<IPEndPoint, Socket>();
         private ConcurrentQueue<string> txQueue = new ConcurrentQueue<string>();
 
         private static readonly object stopLock = new object();
@@ -72,14 +72,16 @@ namespace TcpServer
             }
         }
 
-        private void ClientConnected(IPEndPoint clientEp)
+        private void ClientConnected(IPEndPoint clientEp, Socket s)
         {
-            clientDictionary.Add(clientEp, "");
+            clientDictionary.Add(clientEp, s);
+            clientComboBox.Items.Add(clientEp);
         }
 
         private void ClientDisconnected(IPEndPoint clientEp)
         {
             clientDictionary.Remove(clientEp);
+            clientComboBox.Items.Remove(clientEp);
         }
         
         private void ListenHandler(object obj)
@@ -115,7 +117,7 @@ namespace TcpServer
                             rlist.Add(client);
                             
                             IPEndPoint ep = (IPEndPoint)client.RemoteEndPoint;
-                            ClientConnected(ep);
+                            ClientConnected(ep, client);
                             LogDebug($"Connection[{ep.ToString()}] established.");
                         }
                         else
@@ -176,9 +178,11 @@ namespace TcpServer
 
                     if (txQueue.Count > 0)
                     {
-                        foreach (var socket in rlist)
+                        var clientEp = (IPEndPoint)(clientComboBox.SelectedItem);
+                        if (clientEp != null)
                         {
-                            if (socket != server)
+                            clientDictionary.TryGetValue(clientEp, out Socket socket);
+                            if (socket != null)
                             {
                                 checkWrite.Add(socket);
                             }
@@ -210,6 +214,7 @@ namespace TcpServer
                 }
 
                 clientDictionary.Clear();
+                clientComboBox.Items.Clear();
 
                 LogDebug("Server stopped running.");
 
@@ -308,10 +313,14 @@ namespace TcpServer
         {
             try
             {
-                if (clientDictionary.Count > 0)
+                if (clientComboBox.SelectedItem != null)
                 {
                     string lineToSend = $"{sendTextBox.Text}";
                     txQueue.Enqueue(lineToSend);
+                }
+                else
+                {
+                    LogDebug("Client not selected.");
                 }
             }
             catch (Exception ex)
