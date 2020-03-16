@@ -84,7 +84,7 @@
             // 
             this.startButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.startButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.startButton.BackColor = System.Drawing.Color.LightSkyBlue;
             this.startButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.startButton.ForeColor = System.Drawing.SystemColors.WindowText;
             this.startButton.Location = new System.Drawing.Point(457, 3);
@@ -93,7 +93,7 @@
             this.startButton.Size = new System.Drawing.Size(124, 88);
             this.startButton.TabIndex = 2;
             this.startButton.Text = "Start";
-            this.startButton.UseVisualStyleBackColor = true;
+            this.startButton.UseVisualStyleBackColor = false;
             this.startButton.Click += new System.EventHandler(this.StartButton_Click);
             // 
             // receivedTextBox
@@ -112,6 +112,7 @@
             this.receivedTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.receivedTextBox.Size = new System.Drawing.Size(584, 258);
             this.receivedTextBox.TabIndex = 5;
+            this.receivedTextBox.TabStop = false;
             // 
             // sentTextBox
             // 
@@ -129,6 +130,7 @@
             this.sentTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.sentTextBox.Size = new System.Drawing.Size(584, 258);
             this.sentTextBox.TabIndex = 6;
+            this.sentTextBox.TabStop = false;
             // 
             // label2
             // 
@@ -164,23 +166,23 @@
             this.sendTextBox.Margin = new System.Windows.Forms.Padding(3, 3, 6, 3);
             this.sendTextBox.Name = "sendTextBox";
             this.sendTextBox.Size = new System.Drawing.Size(311, 30);
-            this.sendTextBox.TabIndex = 3;
+            this.sendTextBox.TabIndex = 4;
             this.sendTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SendTextBox_KeyDown);
             // 
             // sendButton
             // 
             this.sendButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.sendButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sendButton.BackColor = System.Drawing.Color.LightSkyBlue;
             this.sendButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.sendButton.ForeColor = System.Drawing.SystemColors.WindowText;
             this.sendButton.Location = new System.Drawing.Point(457, 3);
             this.sendButton.Name = "sendButton";
             this.tableLayoutPanel6.SetRowSpan(this.sendButton, 2);
             this.sendButton.Size = new System.Drawing.Size(124, 88);
-            this.sendButton.TabIndex = 4;
+            this.sendButton.TabIndex = 5;
             this.sendButton.Text = "Send";
-            this.sendButton.UseVisualStyleBackColor = true;
+            this.sendButton.UseVisualStyleBackColor = false;
             this.sendButton.Click += new System.EventHandler(this.SendButton_Click);
             // 
             // label4
@@ -212,6 +214,7 @@
             this.logTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.logTextBox.Size = new System.Drawing.Size(1174, 258);
             this.logTextBox.TabIndex = 7;
+            this.logTextBox.TabStop = false;
             // 
             // tableLayoutPanel1
             // 
@@ -270,7 +273,7 @@
             this.clearReceivedButton.Location = new System.Drawing.Point(3, 5);
             this.clearReceivedButton.Name = "clearReceivedButton";
             this.clearReceivedButton.Size = new System.Drawing.Size(140, 32);
-            this.clearReceivedButton.TabIndex = 8;
+            this.clearReceivedButton.TabIndex = 6;
             this.clearReceivedButton.Text = "Clear Received";
             this.clearReceivedButton.UseVisualStyleBackColor = true;
             this.clearReceivedButton.Click += new System.EventHandler(this.ClearReceivedButton_Click);
@@ -283,7 +286,7 @@
             this.clearSentButton.Location = new System.Drawing.Point(149, 5);
             this.clearSentButton.Name = "clearSentButton";
             this.clearSentButton.Size = new System.Drawing.Size(140, 32);
-            this.clearSentButton.TabIndex = 9;
+            this.clearSentButton.TabIndex = 7;
             this.clearSentButton.Text = "Clear Sent";
             this.clearSentButton.UseVisualStyleBackColor = true;
             this.clearSentButton.Click += new System.EventHandler(this.ClearSentButton_Click);
@@ -296,7 +299,7 @@
             this.clearLogButton.Location = new System.Drawing.Point(295, 5);
             this.clearLogButton.Name = "clearLogButton";
             this.clearLogButton.Size = new System.Drawing.Size(140, 32);
-            this.clearLogButton.TabIndex = 10;
+            this.clearLogButton.TabIndex = 8;
             this.clearLogButton.Text = "Clear Debug";
             this.clearLogButton.UseVisualStyleBackColor = true;
             this.clearLogButton.Click += new System.EventHandler(this.ClearLogButton_Click);
@@ -316,6 +319,7 @@
             // clientComboBox
             // 
             this.clientComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.clientComboBox.BackColor = System.Drawing.Color.LightSteelBlue;
             this.clientComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.clientComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clientComboBox.FormattingEnabled = true;
@@ -323,7 +327,7 @@
             this.clientComboBox.Margin = new System.Windows.Forms.Padding(3, 0, 6, 0);
             this.clientComboBox.Name = "clientComboBox";
             this.clientComboBox.Size = new System.Drawing.Size(311, 33);
-            this.clientComboBox.TabIndex = 1;
+            this.clientComboBox.TabIndex = 3;
             // 
             // label7
             // 
@@ -342,7 +346,7 @@
             this.tableLayoutPanel6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel6.BackColor = System.Drawing.Color.Gainsboro;
+            this.tableLayoutPanel6.BackColor = System.Drawing.Color.LightSteelBlue;
             this.tableLayoutPanel6.ColumnCount = 3;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.51542F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.48458F));
@@ -365,7 +369,7 @@
             this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel3.BackColor = System.Drawing.Color.Gainsboro;
+            this.tableLayoutPanel3.BackColor = System.Drawing.Color.LightSteelBlue;
             this.tableLayoutPanel3.ColumnCount = 3;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());

@@ -4,11 +4,11 @@ namespace TcpClient
 {
     class ProductInfo
     {
-        public static string PRODUCT_NAME = "TcpClient";
+        public static string PRODUCT_NAME = "TCP client";
 
         public static int VERSION_MAJOR = 0;
-        public static int VERSION_MINOR = 2;
-        public static int VERSION_FIX = 1;
+        public static int VERSION_MINOR = 3;
+        public static int VERSION_FIX = 0;
         public static string VERSION_PHASE = "";
         public static string VERSION_BUILD = "";
 

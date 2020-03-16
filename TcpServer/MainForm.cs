@@ -68,7 +68,7 @@ namespace TcpServer
             else
             {
                 startButton.Text = Resources.Start;
-                startButton.BackColor = Color.WhiteSmoke;
+                startButton.BackColor = Color.LightSkyBlue;
             }
         }
 
