@@ -35,16 +35,16 @@ namespace TcpServer
             UpdateFormByConnectionState();
         }
 
-        private void LogReceived(string s)
+        private void LogReceived(string clientEp, string s)
         {
-            logger.LogInfo($"Received:{s}");
-            receivedTextBox.AppendText($"<{DateTime.Now.ToString("yy-MM-dd HH:mm:ss.fff")}> <{s}>\r\n");
+            logger.LogInfo($"Received from {clientEp}:{s}");
+            receivedTextBox.AppendText($"<{DateTime.Now.ToString("yy-MM-dd HH:mm:ss.fff")}> <{clientEp}> <{s}>\r\n");
         }
 
-        private void LogSent(string s)
+        private void LogSent(string clientEp, string s)
         {
-            logger.LogInfo($"Sent:{s}");
-            sentTextBox.AppendText($"<{DateTime.Now.ToString("yy-MM-dd HH:mm:ss.fff")}> <{s}>\r\n");
+            logger.LogInfo($"Sent to {clientEp}:{s}");
+            sentTextBox.AppendText($"<{DateTime.Now.ToString("yy-MM-dd HH:mm:ss.fff")}> <{clientEp}> <{s}>\r\n");
         }
 
         private void LogDebug(string s)
@@ -76,12 +76,20 @@ namespace TcpServer
         {
             clientDictionary.Add(clientEp, s);
             clientComboBox.Items.Add(clientEp);
+            if (clientComboBox.SelectedIndex < 0 && clientComboBox.Items.Count > 0)
+            {
+                clientComboBox.SelectedIndex = 0;
+            }
         }
 
         private void ClientDisconnected(IPEndPoint clientEp)
         {
             clientDictionary.Remove(clientEp);
             clientComboBox.Items.Remove(clientEp);
+            if (clientComboBox.SelectedIndex < 0 && clientComboBox.Items.Count > 0)
+            {
+                clientComboBox.SelectedIndex = 0;
+            }
         }
         
         private void ListenHandler(object obj)
@@ -122,6 +130,8 @@ namespace TcpServer
                         }
                         else
                         {
+                            IPEndPoint ep = (IPEndPoint)((Socket)socket).RemoteEndPoint;
+
                             try
                             {
                                 int count = ((Socket)socket).Receive(buffer);
@@ -129,11 +139,10 @@ namespace TcpServer
                                 if (count > 0)
                                 {
                                     string receivedStr = Encoding.UTF8.GetString(buffer, 0, count);
-                                    LogReceived($"{receivedStr.TrimEnd('\r', '\n')}");
+                                    LogReceived(ep.ToString(), $"{receivedStr.TrimEnd('\r', '\n')}");
                                 }
                                 else
                                 {
-                                    IPEndPoint ep = (IPEndPoint)((Socket)socket).RemoteEndPoint;
                                     ClientDisconnected(ep);
                                     LogDebug($"Connection[{ep.ToString()}] closed.");
                                     ((Socket)socket).Close();
@@ -142,7 +151,6 @@ namespace TcpServer
                             }
                             catch (Exception e)
                             {
-                                IPEndPoint ep = (IPEndPoint)((Socket)socket).RemoteEndPoint;
                                 ClientDisconnected(ep);
                                 LogDebug($"Connection[{ep.ToString()}] broken.");
                                 ((Socket)socket).Close();
@@ -153,17 +161,18 @@ namespace TcpServer
 
                     foreach (var socket in checkWrite)
                     {
+                        IPEndPoint ep = (IPEndPoint)((Socket)socket).RemoteEndPoint;
+
                         try
                         {
                             while (txQueue.TryDequeue(out string lineToSend))
                             {
                                 ((Socket)socket).Send(Encoding.UTF8.GetBytes($"{lineToSend}\r\n"));
-                                LogSent($"{lineToSend}");
+                                LogSent(ep.ToString(), $"{lineToSend}");
                             }
                         }
                         catch (Exception e)
                         {
-                            IPEndPoint ep = (IPEndPoint)((Socket)socket).RemoteEndPoint;
                             ClientDisconnected(ep);
                             LogDebug($"Connection[{ep.ToString()}] broken.");
                             ((Socket)socket).Close();
